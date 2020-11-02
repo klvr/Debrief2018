@@ -1,0 +1,12 @@
+---
+title: "Untitled"
+author: "Kristoffer Klevjer"
+date: "11/2/2020"
+output: html_document
+---
+<h1>About</h1>
+The project was done under the supervision of Prof. Gerit Pfuhl,..
+<br></br>
+2020 mich..
+<br></br>
+Sign up to recive notification of publication

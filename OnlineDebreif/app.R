@@ -3,32 +3,24 @@
 
 library(shiny)
 
-# Text - Navigate to line X for code
-intro1 <- "This page contains a brief debrief for a project in probabilistic reasoning, in which you participated in 2018."
-intro2 <- "In the session you completed a total of six tasks, and a debrief questionnaire. Most tasks (referred to as \"Jar-tasks\" and \"Box-tasks\"), are tasks in which you gathered information before reaching a decision (i.e., information sampling tasks),"
-
 ui <- fluidPage(
     titlePanel("Debrief for 2018-participants"),
     navlistPanel(
-        tabPanel("Introduction",
-                 h1("Introduction"),
-                 p(intro1),
-                 br(),
-                 p(intro2),
-                 p(includeText(text.txt))),
+        tabPanel("Introduction",includeMarkdown(path = "introduction.Rmd")),
         "Jar-tasks",
-        tabPanel("One jar"),
-        tabPanel("Auditory"),
-        tabPanel("Two jars"),
+        tabPanel("One jar", includeMarkdown(path = "onejar.Rmd")),
+        tabPanel("Auditory", includeMarkdown(path = "auditory.Rmd")),
+        tabPanel("Two jars", includeMarkdown(path = "twojars.Rmd")),
         "Box-tasks",
-        tabPanel("Box task"),
-        tabPanel("Disorganized box-task"),
+        tabPanel("Box", includeMarkdown(path = "boxtask.Rmd")),
+        tabPanel("Disorganized box", includeMarkdown(path = "disorganizedbox.Rmd")),
         "Other tasks",
-        tabPanel("Risk and ambiguity task"),
-        tabPanel("Debrief"),
-        "Summary",
-        tabPanel("Overview"),
-        tabPanel("About")
+        tabPanel("Risk and ambiguity", includeMarkdown(path = "riskandambiguity.Rmd")),
+        tabPanel("CAPE", includeMarkdown(path = "cape.Rmd")),
+        tabPanel("Debrief", includeMarkdown(path = "debrief.Rmd")),
+        "Overview",
+        tabPanel("Summary", includeMarkdown(path = "summary.Rmd")),
+        tabPanel("About",includeMarkdown(path = "about.Rmd"))
     )
 )
 

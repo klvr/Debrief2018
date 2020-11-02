@@ -1,0 +1,11 @@
+---
+title: "Untitled"
+author: "Kristoffer Klevjer"
+date: "11/2/2020"
+output: html_document
+---
+<h1>Introduction</h1>
+This page contains a debrief for a project in probabilistic reasoning, in which you participated in 2018.
+In the session you completed a total of six tasks, and a debrief questionnaire. Most tasks (referred to as "Jar-tasks" and "Box-tasks"), are tasks in which you gathered information before reaching a decision (i.e., information sampling tasks).
+<br></br>
+eh
