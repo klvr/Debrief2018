@@ -6,7 +6,7 @@ library(shiny)
 ui <- fluidPage(
     titlePanel("Debrief for 2018-participants"),
     navlistPanel(
-        tabPanel("Introduction",includeMarkdown(path = "introduction.Rmd")),
+        tabPanel("Introduction",includeMarkdown(path = "introduction.Rmd"), checkboxInput("understand","I understand the information above", value=FALSE), numericInput("id", "My ID is:", value=0), submitButton("Save")),
         "Jar-tasks",
         tabPanel("One jar", includeMarkdown(path = "onejar.Rmd")),
         tabPanel("Auditory", includeMarkdown(path = "auditory.Rmd")),
@@ -15,7 +15,7 @@ ui <- fluidPage(
         tabPanel("Box", includeMarkdown(path = "boxtask.Rmd")),
         tabPanel("Disorganized box", includeMarkdown(path = "disorganizedbox.Rmd")),
         "Other tasks",
-        tabPanel("Risk and ambiguity", includeMarkdown(path = "riskandambiguity.Rmd")),
+        tabPanel("Risk and ambiguity (ART)", includeMarkdown(path = "riskandambiguity.Rmd")),
         tabPanel("CAPE", includeMarkdown(path = "cape.Rmd")),
         tabPanel("Debrief", includeMarkdown(path = "debrief.Rmd")),
         "Overview",
