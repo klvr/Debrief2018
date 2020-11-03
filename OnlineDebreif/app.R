@@ -8,28 +8,28 @@ library(shiny)
 ui <- fluidPage(
     titlePanel("Debrief for 2018-participants"),
     navlistPanel(
-        tabPanel("Introduction",includeMarkdown(path = "introduction.Rmd"), checkboxInput("understand","I understand the information above", value=FALSE), numericInput("id", "My ID is:", value=0), submitButton("Save"), textOutput("saved_var")),
+        tabPanel("Introduction",includeMarkdown(path = "www/introduction.Rmd"), checkboxInput("understand","I understand the information above", value=FALSE), numericInput("id", "My ID is:", value=0), submitButton("Save"), textOutput("saved_var")),
         "Jar-tasks",
-        tabPanel("One jar", includeMarkdown(path = "onejar.Rmd")),
-        tabPanel("Auditory", includeMarkdown(path = "auditory.Rmd")),
-        tabPanel("Two jars", includeMarkdown(path = "twojars.Rmd")),
+        tabPanel("One jar", includeMarkdown(path = "www/onejar.Rmd")),
+        tabPanel("Auditory", includeMarkdown(path = "www/auditory.Rmd")),
+        tabPanel("Two jars", includeMarkdown(path = "www/twojars.Rmd")),
         "Box-tasks",
-        tabPanel("Box", includeMarkdown(path = "boxtask.Rmd")),
-        tabPanel("Disorganized box", includeMarkdown(path = "disorganizedbox.Rmd")),
+        tabPanel("Box", includeMarkdown(path = "www/boxtask.Rmd")),
+        tabPanel("Disorganized box", includeMarkdown(path = "www/disorganizedbox.Rmd")),
         "Other tasks",
-        tabPanel("Risk and ambiguity (ART)", includeMarkdown(path = "riskandambiguity.Rmd")),
-        tabPanel("CAPE", includeMarkdown(path = "cape.Rmd")),
-        tabPanel("Debrief", includeMarkdown(path = "debrief.Rmd")),
+        tabPanel("Risk and ambiguity (ART)", includeMarkdown(path = "www/riskandambiguity.Rmd")),
+        tabPanel("CAPE", includeMarkdown(path = "www/cape.Rmd")),
+        tabPanel("Debrief", includeMarkdown(path = "www/debrief.Rmd")),
         "Overview",
-        tabPanel("Summary", includeMarkdown(path = "summary.Rmd")),
-        tabPanel("About",includeMarkdown(path = "about.Rmd"))
+        tabPanel("Summary", includeMarkdown(path = "www/summary.Rmd")),
+        tabPanel("About",includeMarkdown(path = "www/about.Rmd"))
     )
 )
 
 server <- function(input, output) {
     output$saved_var <- renderText({
-        if(input$id*input$understand > 0) {paste("Your personal scores will be displayed, ID:", input$id) }
-        else { paste("You have chosen to not display your own scores, or have yet to consent and provide an ID") }
+        if(input$id*input$understand > 0) {paste("Your personal scores will be displayed, ID:", input$id, ".") }
+        else { paste("You have chosen to not display your own scores, or have yet to consent and provide an ID.") }
     })
 }
 
